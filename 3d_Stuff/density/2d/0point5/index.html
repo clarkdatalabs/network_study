@@ -1,0 +1,26 @@
+
+<html>
+    <head><meta charset="utf-8" /></head>
+    <body>
+        
+        <script type="text/javascript" src="plotly.min.js"></script>
+        <script type="text/javascript" src="figure.js"></script>
+        <script type="text/javascript" src="figure2.js"></script>
+        
+        <div id="point1" class="plotly-graph-div"></div>
+        <script type="text/javascript">
+            window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+            
+            Plotly.newPlot("point1",  figure.data, figure.layout, { "showLink": false})
+            
+        </script>
+
+        <div id="point9" class="plotly-graph-div"></div>
+        <script type="text/javascript">
+            window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+            
+            Plotly.newPlot("point9",  figure2.data, figure2.layout, { "showLink": false})
+            
+        </script>
+    </body>
+</html>

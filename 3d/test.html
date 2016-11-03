@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Testing the plotly 3d work.</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type='text/javascript' src='mousewheel/jquery.mousewheel.min.js'></script>
+</head>
+<body>
+
+	<iframe width="1240" height="800" frameborder="0" align="middle" scrolling="no" src="https://plot.ly/~kanchi24/4.embed" id="plot"></iframe>
+
+	<script type="text/javascript" charset="utf-8">
+
+
+
+	
+	
+  window.onload = function() {
+
+
+
+
+// $("#plot").contents().find('#scene').on("click", function() { console.log('click!'); });
+
+// handler = function(e) {
+
+// var box2 = $("#plot").contents().find('#scene2').find("canvas");
+// console.log(box2);
+
+//   $( box2 ).trigger( "wheel" );
+
+// }
+
+// var box1 = $("#plot").contents().find('#scene');
+
+// var scene = box1.find("canvas");
+
+// console.log(box1);
+
+// scene.on('wheel', handler);
+// scene.addEventListener('dragend', handler);
+// scene.addEventListener('drag', handler);
+// scene.addEventListener('click', handler);
+// scene.addEventListener('dblclick', handler);
+// scene.addEventListener('mousedown', handler);
+// scene.addEventListener('mouseup', handler);
+// scene.addEventListener('mouseover', handler);
+// scene.addEventListener('mouseout', handler);
+// scene.addEventListener('mousemove', handler);
+
+
+var box1 = $("#plot").contents().find('#scene');
+var box2 = $("#plot").contents().find('#scene2');
+
+// var $divs = $(box1,box2);
+// var sync = function(e){
+//   console.log(e);
+  
+//   box2.trigger('wheel',{type:'custom mouse move'});
+ 
+// }
+
+// // $(box1).on( 'wheel', sync);
+
+// box1.on("wheel", sync);
+
+box1.bind('mousewheel', function(e,d){
+    console.log(e);
+    var event1 = jQuery.Event( "mousewheel",{delta: d, offsetX: e.offsetX, offsetY : e.offsetY, deltaX: e.deltaX, deltaY : e.deltaY} );
+    jQuery(box2).trigger(event1);
+    console.log(event1);
+
+
+
+});
+
+
+
+};
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
